@@ -5,7 +5,7 @@ function Home() {
   return (
     <div>
       <Hero />
-      <Productsection />
+      {/*<Productsection />*/}
       {/* Add more home page content here if needed */}
     </div>
     

@@ -26,18 +26,41 @@ function About() {
 
         {/* Text Content */}
         <div className="about-text-block">
+          
           <h2>Three Generations of Dairy Excellence</h2>
           <p>
             From humble beginnings to a trusted name in every household, we have poured generations of dedication into every drop. 
             Our story is built on family values, sustainable practices, and an unwavering commitment to purity.
           </p>
-          <p>
-            Whether it's fresh milk, rich paneer, or homemade ghee, our legacy ensures you always get the best.
-          </p>
+           <div className="feature-item">
+    
+ <div className="about-features">
+  <div className="feature-box">
+    <img src="/service.png" alt="Service Icon" className="feature-icon" />
+    <div className="feature-text">
+      <h4>Dedicated Services</h4>
+      <p>Clita erat ipsum et lorem et sit, sed stet lorem sit clita</p>
+    </div>
+  </div>
+
+  <div className="feature-box">
+    <img src="/organic.png" alt="Organic Icon" className="feature-icon" />
+    <div className="feature-text">
+      <h4>Organic Products</h4>
+      <p>Clita erat ipsum et lorem et sit, sed stet lorem sit clita</p>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+        
         </div>
       </div>
     </section>
+    
   );
+  
 }
 
 export default About;
