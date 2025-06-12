@@ -1,0 +1,128 @@
+.about-section {
+  padding: 50px 20px;
+  background-color: #fdfdfd;
+}
+
+.about-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.about-image-large img {
+  width: 250px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.about-image-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-image-stack img {
+  width: 250px;
+  height: 48%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.about-text-block {
+  flex: 1;
+  max-width: 500px;
+  padding: 10px;
+}
+
+.about-text-block h2 {
+  font-size: 2.2rem;
+  color: #2e7d32;
+  margin-bottom: 20px;
+   animation: bounce 1.5s infinite;
+}
+
+.about-text-block p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+ .about-image-large img,
+.about-image-stack img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.about-image-large:hover img,
+.about-image-stack img:hover {
+  transform: scale(1.05);
+}
+
+  .about-text-block {
+    text-align: center;
+    max-width: 100%;
+  }
+}
+.years-badge {
+  position: absolute;
+  background-color: #1ad313;
+  color: white;
+  font-weight: bold;
+  padding: 20px 14px;
+  border-radius: 6px;
+  top: 10px;
+  left: 10px;
+  
+  font-size: 1rem;
+  animation: bounce 1.5s infinite;
+  z-index: 2;
+}
+.about-image-large {
+  position: relative;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(4px);
+  }
+}
+/* Wrapper that allows zoom space */
+.image-wrapper {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Image style with zoom effect */
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Zoom on hover */
+.image-wrapper:hover img {
+  transform: scale(1.08);
+}

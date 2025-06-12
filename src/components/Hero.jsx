@@ -1,9 +1,19 @@
 import React from "react";
 import "./Hero.css";
+import { useNavigate } from 'react-router-dom';
 
 function Hero() {
+   
+     const navigate = useNavigate();
+
+     const handleClick = () => {
+    navigate('/products');
+     };
+    
   return (
+    
     <section className="hero">
+      
       <div className="hero-content">
         <div className="hero-badge">Family Owned Store Since 1952</div>
         <div className="hero-visual-mobile">
@@ -27,7 +37,11 @@ function Hero() {
           Experience the pure taste of nature with our premium dairy products. From our pasture to your table, we ensure the highest quality and freshness.
         </p>
         <div className="hero-actions">
-          <button className="hero-btn primary">Shop Products</button>
+          
+          <button className="hero-btn primary" onClick={handleClick}>Shop Products</button>
+          
+         
+        
           <button className="hero-btn secondary">Take Farm Tour</button>
         </div>
         <div className="hero-stats">
@@ -59,6 +73,8 @@ function Hero() {
       </div>
     </section>
   );
+
 }
+
 
 export default Hero;
