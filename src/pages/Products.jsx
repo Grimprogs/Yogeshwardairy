@@ -1,5 +1,13 @@
 import React from "react";
+import Productsection from "../components/Productsection"; // go up one level, then into components
+
 function Products() {
-  return <h2>Our Dairy Products</h2>;
+  return (
+    <>
+      
+      <Productsection />
+    </>
+  );
 }
+
 export default Products;
