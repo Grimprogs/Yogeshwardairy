@@ -2,7 +2,9 @@ import React from "react";
 import Hero from "../components/Hero";
 import About from "../pages/About";
 import './Home.css';
-import Productsection from "../components/Productsection"; 
+import Testimonial from '../components/Testimonial'; import Productsection from "../components/Productsection"; 
+import Feedback from "../components/Feedback";
+import Contact from "../components/Contact"; 
 
 function Home() {
   return (
@@ -26,14 +28,12 @@ function Home() {
     <img src="/milma.png" alt="Milma" />
     <img src="/kwality.png" alt="Kwality Dairy" />
     <img src="/paraag.png" alt="Parag Milk Foods" />
-    <img src="/heritage.png" alt="Heritage Foods" />
-    <img src="/britannia-dairy.png" alt="Britannia Dairy" />
-    <img src="/amul-green.png" alt="Green Amul" />
-    <img src="/tonino.png" alt="Tonino Dairy" />
-    <img src="/rohini.png" alt="Rohini Dairy" />
-    <img src="/gokul.png" alt="Gokul Dairy" />
+   
   </div>
 </section>
+      <Testimonial />
+        <Feedback />
+
 
     </>
   );

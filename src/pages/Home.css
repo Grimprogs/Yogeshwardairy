@@ -47,13 +47,15 @@
   color: #7f8c8d;
   margin-bottom: 40px;
   font-weight: 400;
+  gap : 10px;
 }
 
 .partner-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-auto-rows: auto;
   gap: 30px;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   align-items: center;
   justify-items: center;

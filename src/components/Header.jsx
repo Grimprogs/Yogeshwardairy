@@ -49,7 +49,7 @@
           <Link to="/">Home</Link>
           <Link to="/products">Products</Link>
           <Link to="/about">About</Link>
-          <Link to="/contact">Contact</Link>
+          <Link to="/ContactPage">Contact</Link>
         </nav>
 
         <div className="actions">
@@ -87,7 +87,7 @@
     About
   </Link>
   <Link
-    to="/contact"
+    to="/contactPage"
     onClick={() => handleLinkClick(3)}
     className={`mobile-btn ${clickedIndex === 3 ? 'pop-effect' : ''}`}
   >

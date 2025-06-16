@@ -17,6 +17,21 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+.products-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 30px;
+  font-weight: 500;
+    text-align:   center;
+}
+
+.product-info {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: #444;
+
+}
+
 .product-card1 {
   background: white;
   padding: 30px;
@@ -28,6 +43,7 @@
   cursor: pointer;
 }
 .product-card {
+  position: relative; 
   background: white;
   padding: 30px;
   border-radius: 10px;
@@ -51,53 +67,47 @@
   border-radius: 8px;
   margin-bottom: 10px;
 }
-.add-to-cart-btn {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #2e7d32; /* green */
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+/* 1. Highlight name and price on hover */
+.product-card h3,
+.product-info strong {
+  transition: color 0.3s ease;
 }
 
-.add-to-cart-btn:hover {
-  background-color: #1b5e20; /* darker green on hover */
-
-}
-.quantity-control {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 12px 0;
-  gap: 10px;
-}
-
-.quantity-control button {
-  background-color: #f1f1f1;
-  border: none;
-  padding: 6px 12px;
-  font-size: 1.2rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
+.product-card:hover h3 {
   color: #2e7d32;
-  transition: background-color 0.2s;
 }
 
-.quantity-control button:hover {
-  background-color: #d4edda;
+.product-card:hover .product-info strong {
+  color: #1b5e20;
 }
 
-.quantity-control span {
-  font-size: 1.1rem;
+/* 2. Best Seller or New Badge */
+.product-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background-color: #ff7043; /* coral/orange */
+  color: #fff;
+  font-size: 0.75rem;
   font-weight: 600;
-  width: 24px;
-  text-align: center;
+  padding: 4px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  letter-spacing: 0.5px;
 }
+
+/* Make sure the container is relative */
+.product-card {
+  position: relative;
+}
+
+
+
+
+
+
+
 
 @media (max-width: 600px) {
   .product-card {
