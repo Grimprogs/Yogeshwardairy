@@ -3,9 +3,12 @@
   import { Link } from "react-router-dom";
   import { FaBars, FaTimes, FaShoppingCart, FaPhone } from "react-icons/fa";
   import "./Header.css";
+  import LogoutButton from "../pages/LogoutButton";
+  import { useAuth } from "../AuthContext.jsx";
   
 
   function Header() {
+    const { currentUser } = useAuth();
     const [menuOpen, setMenuOpen] = useState(false);
     const [pop, setPop] = useState(false);
     const handleHamburgerClick = () => {
@@ -46,10 +49,11 @@
 
         {/* Desktop nav */}
         <nav className="nav-links">
-          <Link to="/">Home</Link>
+          <Link to="/home">Home</Link>
           <Link to="/products">Products</Link>
           <Link to="/about">About</Link>
           <Link to="/ContactPage">Contact</Link>
+          {currentUser && <LogoutButton />}
         </nav>
 
         <div className="actions">
@@ -62,11 +66,14 @@
 
         {/* Mobile menu overlay */}
         {menuOpen && (
+          
           <div className="mobile-menu">
+            
           
      <div className="mobile-menu-left">
+      
   <Link
-    to="/"
+    to="/home"
     onClick={() => handleLinkClick(0)}
     className={`mobile-btn ${clickedIndex === 0 ? 'pop-effect' : ''}`}
   >
@@ -94,7 +101,13 @@
     <FaPhone style={{ marginRight: '8px' }} />
     Contact
   </Link>
+  {currentUser && (
+    <div className="mobile-logout">
+      <LogoutButton />
+    </div>
+  )}
 </div>
+
 
 
             
