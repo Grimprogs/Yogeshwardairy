@@ -1,0 +1,27 @@
+/* src/components/WhatsappChat.css */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25D366;
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 999;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  background-color: #1DA851;
+  transform: scale(1.05);
+}
+
+.whatsapp-icon {
+  font-size: 1.4rem;
+}

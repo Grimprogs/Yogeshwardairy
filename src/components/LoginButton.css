@@ -1,0 +1,26 @@
+.nav-login-btn {
+  background-color: #1e90ff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-login-btn:hover {
+  background-color: #1572cc;
+  transform: scale(1.05);
+}
+
+.login-desktop {
+  margin-left: auto;
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .login-desktop {
+    display: none;
+  }
+}

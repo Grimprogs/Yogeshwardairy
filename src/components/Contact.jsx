@@ -2,6 +2,7 @@ import React from 'react';
 import './Contact.css';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaInstagram, FaTwitter, FaFacebook, FaLinkedin } from 'react-icons/fa';
 import Feedback from './Feedback'; // assuming you have this form component
+import ContactForm from "../components/ContactForm";
 
 function Contact() {
   return (
@@ -47,7 +48,7 @@ function Contact() {
 
         {/* Right: Feedback Form */}
         <div className="contact-right">
-          <Feedback />
+          <ContactForm />
         </div>
       </div>
     </section>

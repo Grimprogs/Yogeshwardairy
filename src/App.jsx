@@ -12,7 +12,9 @@ import { AuthProvider } from "./AuthContext";
 import { Navigate } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import ScrollToTop from "./ScrollToTop";
+import WhatsappChat from "./components/WhatsappChat";
 function App() {
+ 
   return (
      <AuthProvider>
     <Router>  
@@ -21,46 +23,26 @@ function App() {
         <Header />
         <div className="main-content">
          <Routes>
-  <Route path="/" element={<Navigate to="/signup" replace />} />
-  <Route path="/login" element={<Login />} />
+   <Route path="/" element={<Home />} />
+  <Route path="/about" element={<About />} />
+  <Route path="/products" element={<Products />} />
+  <Route path="/contactpage" element={<Contact />} />
+  
   <Route path="/signup" element={<Signup />} />
-
-  {/* Protected Routes */}
-  <Route
-    path="/home"
-    element={
-      <PrivateRoute>
-        <Home />
-      </PrivateRoute>
-    }
-  />
-  <Route
-    path="/about"
-    element={
-      <PrivateRoute>
-        <About />
-      </PrivateRoute>
-    }
-  />
-  <Route
-    path="/products"
-    element={
-      <PrivateRoute>
-        <Products />
-      </PrivateRoute>
-    }
-  />
+  <Route path="/login" element={<Login />} />
+  
   <Route
     path="/ContactPage"
     element={
-      <PrivateRoute>
+      
         <Contact />
-      </PrivateRoute>
+    
     }
   />
 </Routes>
         </div>
         <Footer />
+        <WhatsappChat />
       </div>
     </Router>
     </AuthProvider>

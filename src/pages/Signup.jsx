@@ -33,7 +33,7 @@ function Signup() {
       });
 
       alert("Signup successful!");
-      navigate("/home");
+      navigate("/");
     } catch (err) {
       setError(err.message);
     }

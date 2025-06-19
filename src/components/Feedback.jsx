@@ -10,7 +10,7 @@ const Feedback = () => {
     const form = e.target;
     const data = new FormData(form);
 
-    await fetch("https://formsubmit.co/ajax/YOUR_EMAIL@gmail.com", {
+    await fetch("https://formsubmit.co/ajax/anuragg0904@gmail.com", {
       method: "POST",
       headers: {
         Accept: "application/json",

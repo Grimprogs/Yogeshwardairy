@@ -101,7 +101,7 @@ const Hero = () => {
             </button>
             <button 
               className="hero-btn secondary glass-effect"
-              onClick={() => handleNavigate('/tour')}
+              onClick={() => handleNavigate('/contactPage')}
             >
               <span>Take Farm Tour</span>
               <div className="btn-icon">📍</div>

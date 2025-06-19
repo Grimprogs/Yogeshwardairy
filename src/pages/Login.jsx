@@ -25,7 +25,7 @@ function Login() {
       }
 
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/home");
+      navigate("/");
     } catch (err) {
       setError("Invalid credentials. Please try again.");
     }
