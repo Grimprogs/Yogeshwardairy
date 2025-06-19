@@ -6,6 +6,7 @@ import ContactForm from "../components/ContactForm";
 
 function Contact() {
   return (
+    
     <section className="contact-section">
       <h2 className="contact-title">Contact Us</h2>
       <img src="Contact.png" alt="Contact" className="contact-image" />

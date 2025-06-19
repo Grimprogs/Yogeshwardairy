@@ -1,63 +1,91 @@
 .contact-form-wrapper {
-  background: #f9f9f9;
-  padding: 32px;
-  border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to right, #fdfdfd, #f7fff7);
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   font-family: 'Roboto', sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  background-image: url('/leaf-pattern.png'); /* Indian touch like mango leaves or rangoli */
+  background-repeat: repeat;
+  background-position: bottom right;
+  background-size: 150px;
+
+
 }
 
 .form-heading {
-  font-size: 1.5rem;
-  color: #179c34;
-  margin-bottom: 16px;
+  font-size: 2rem;
+  color: #147e2a;
+  margin-bottom: 24px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  width: 80%;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  border: 1px solid #d0e6d0;
+  border-radius: 10px;
   font-size: 1rem;
+  background-color: #ffffff;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #179c34;
+  outline: none;
+  box-shadow: 0 0 5px rgba(23, 156, 52, 0.3);
 }
 
 .contact-form textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 140px;
 }
 
 .contact-form button {
-  background-color: #179c34;
+  background: linear-gradient(to right, #179c34, #127a2a);
   color: white;
-  padding: 12px 24px;
+  padding: 14px 28px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.4s ease, transform 0.2s ease;
+  display: block;
+  margin: 0 auto;
 }
 
 .contact-form button:hover {
-  background-color: #127a2a;
+  background: linear-gradient(to right, #127a2a, #0f5f22);
+  transform: translateY(-2px);
 }
 
 .form-success {
   font-size: 1.1rem;
-  color: green;
-  background: #e6ffe6;
-  padding: 12px;
-  border-radius: 8px;
+  color: #2e7d32;
+  background: #e8ffe8;
+  padding: 14px 20px;
+  border-radius: 10px;
   text-align: center;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 128, 0, 0.1);
 }
 
 .contact-meta {
-  margin-top: 24px;
+  margin-top: 32px;
   font-size: 0.95rem;
-  color: #444;
+  color: #555;
+  text-align: center;
 }
 
 .contact-meta h4 {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: #179c34;
+  font-size: 1.1rem;
 }

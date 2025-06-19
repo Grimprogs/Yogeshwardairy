@@ -59,7 +59,7 @@ const Hero = () => {
         <div className="hero-content">
           <div className={`hero-badge ${isVisible ? 'fade-in-up' : ''}`}>
             <div className="badge-icon">🏆</div>
-            <span>Family Owned Store Since 1952</span>
+            <span>Modern Dairy Processing Since 1952</span>
             <div className="badge-shine"></div>
           </div>
 
@@ -76,19 +76,18 @@ const Hero = () => {
 
           <h1 className={`hero-title ${isVisible ? 'fade-in-up delay-1' : ''}`}>
             <span className="hero-green">
-              Fresh
+              Quality
               <div className="word-highlight"></div>
             </span>
             <br />
-            <span className="hero-green">Dairy</span>
+            <span className="hero-green">Products</span>
             <br />
-            From Our <span className="hero-yellow">Farm</span>
+            From Our <span className="hero-yellow">Factory</span>
           </h1>
 
           <p className={`hero-description ${isVisible ? 'fade-in-up delay-2' : ''}`}>
-            Experience the pure taste of nature with our premium dairy products. 
-            From our pasture to your table, we ensure the highest quality and freshness 
-            with every single product we craft.
+              Bringing together tradition and technology, we craft fresh dairy products in our world-class factory. 
+  Each item is hygienically processed, ensuring the purest taste for your family.
           </p>
 
           <div className={`hero-actions ${isVisible ? 'fade-in-up delay-3' : ''}`}>
@@ -96,14 +95,14 @@ const Hero = () => {
               className="hero-btn primary ripple-effect"
               onClick={() => handleNavigate('/products')}
             >
-              <span>Shop Products</span>
+              <span>Explore Products</span>
               <div className="btn-shine"></div>
             </button>
             <button 
               className="hero-btn secondary glass-effect"
               onClick={() => handleNavigate('/contactPage')}
             >
-              <span>Take Farm Tour</span>
+              <span>Visit Factory</span>
               <div className="btn-icon">📍</div>
             </button>
           </div>

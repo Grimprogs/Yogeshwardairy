@@ -56,11 +56,7 @@ function Header() {
  
 
 <div className="login-desktop greeting-group">
-  {currentUser && (
-    <span className="greeting-text">
-      Hi, {currentUser.displayName || "User"}
-    </span>
-  )}
+  
    <LoginButton className="nav-login-btn" key={currentUser?.uid} />
 </div>
 

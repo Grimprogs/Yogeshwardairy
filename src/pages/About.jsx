@@ -198,6 +198,35 @@ const [selectedYear, setSelectedYear] = useState("2018");
         </div>
       </div>
     </section>
+    <FadeInSection>
+  <section className="vision-section fade-in">
+    <h2 className="vision-heading">Our Vision</h2>
+    <p className="vision-text">
+      Inspired by the spirit of Indian families, our vision is simple — to bring *Shuddh aur Swachh Doodh* from our farms to your doorstep.  
+      We blend traditional wisdom with modern practices, supporting farmers and ensuring every product carries a taste of home.
+    </p>
+
+    <div className="vision-icons">
+      <div className="vision-icon-block">
+        <img src="/vision1.png" alt="Tradition" />
+        <h4>Rooted in Tradition</h4>
+      </div>
+      <div className="vision-icon-block">
+        <img src="/vision2.png" alt="Farmer Support" />
+        <h4>Empowering Farmers</h4>
+      </div>
+      <div className="vision-icon-block">
+        <img src="/vision3.png" alt="Innovation" />
+        <h4>Modern Yet Pure</h4>
+      </div>
+      <div className="vision-icon-block">
+        <img src="/vision4.png" alt="Community" />
+        <h4>Har Ghar ka Bharosa</h4>
+      </div>
+    </div>
+  </section>
+</FadeInSection>
+
 </FadeInSection>
 {showTimeline && (
       <section className="timeline-section fade-in">
