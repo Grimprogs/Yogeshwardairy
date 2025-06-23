@@ -8,7 +8,7 @@
   background: linear-gradient(135deg, #f8fff8 0%, #efffef 50%, #f0fff0 100%);
 
   /* Background image */
-  background-image: url('/premium-bg.png');
+  background-image: url('/premium.png');
   background-repeat: no-repeat;
   background-size: cover;     /* Stretches the image */
   background-position: center; /* Centers the image */
