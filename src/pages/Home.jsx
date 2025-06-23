@@ -10,6 +10,7 @@ function Home() {
   return (
     <>
       <div>
+         <div className="hero-image-layer"></div>
         <Hero />
         <About showTimeline={false} /> {/* Hide Timeline here */}
         {/* <Productsection /> */}

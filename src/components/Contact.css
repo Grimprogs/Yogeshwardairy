@@ -3,10 +3,11 @@
   background-color: #f7f7f7;
   text-align: center;
   padding: 50px 20px;
-  background-image: url('/leafpattern.png'); /* Replace with your own tile path */
-  background-repeat: repeat;
+  background-image: url('/contact4.png'); /* Replace with your own tile path */
+  background-repeat:no-repeat;
+  background-size: cover;  
   background-size: 120px; /* Adjust to suit how dense or spaced out you want it */
-  background-color: #fffdf5; /* Creamy-yellowish backdrop for dairy vibes */
+  background-color: #e7d8db; /* Creamy-yellowish backdrop for dairy vibes */
   text-align: center;
   
 }

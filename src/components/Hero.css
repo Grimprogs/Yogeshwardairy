@@ -3,8 +3,17 @@
 .premium-hero-wrapper {
   position: relative;
   overflow: hidden;
+
+  /* Gradient fallback */
   background: linear-gradient(135deg, #f8fff8 0%, #efffef 50%, #f0fff0 100%);
+
+  /* Background image */
+  background-image: url('./premium-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;     /* Stretches the image */
+  background-position: center; /* Centers the image */
 }
+
 
 .floating-elements {
   position: absolute;
@@ -40,6 +49,7 @@
   min-height: 85vh;
   position: relative;
   z-index: 2;
+ 
 }
 
 .hero-content {

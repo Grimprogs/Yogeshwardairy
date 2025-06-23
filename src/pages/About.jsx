@@ -89,15 +89,17 @@ const [selectedYear, setSelectedYear] = useState("2018");
 
   return (
      <>
-     <FadeInSection>
-     <section className="about-hero fade-in">
-  <div className="about-text ">
-    <h2>About Us</h2>
-    <p>We deliver quality dairy products with care and innovation.</p>
-  </div>
-  <img src="About.png" alt="About Us" className="about-bg" />
-  
+ <section className="hero-image-layer">
+  <img src="/About4.png" className="half-hero-img" alt="Top Image" />
 </section>
+
+   <FadeInSection>
+  <section className="about-hero fade-in">
+    <div className="about-overlay">
+      <h2>About Us</h2>
+      <p>We deliver quality dairy products with care and innovation.</p>
+    </div>
+  </section>
 </FadeInSection>
 
       {/* ABOUT SECTION */}
@@ -198,7 +200,35 @@ const [selectedYear, setSelectedYear] = useState("2018");
         </div>
       </div>
     </section>
-    <FadeInSection>
+    </FadeInSection>
+ <FadeInSection>
+  <section className="mission-section fade-in">
+    <h2 className="mission-heading">Our Mission</h2>
+
+    <div className="mission-cards-container">
+      <div className="mission-card">
+        <img src="/mission1.png" alt="Empowering Farmers" />
+        <h4>Empowering Farmers</h4>
+        <p>
+          We strive to uplift rural communities by supporting farmers with fair trade, 
+          modern resources, and a commitment to their livelihood.
+        </p>
+      </div>
+
+      <div className="mission-card">
+        <img src="/mission2.png" alt="Sustainable Growth" />
+        <h4>Sustainable Growth</h4>
+        <p>
+          Our mission includes eco-friendly practices and a future-focused mindset
+          to ensure health, harmony, and long-term well-being.
+        </p>
+      </div>
+    </div>
+  </section>
+</FadeInSection>
+
+
+<FadeInSection>
   <section className="vision-section fade-in">
     <h2 className="vision-heading">Our Vision</h2>
     <p className="vision-text">
@@ -213,7 +243,7 @@ const [selectedYear, setSelectedYear] = useState("2018");
       </div>
       <div className="vision-icon-block">
         <img src="/vision2.png" alt="Farmer Support" />
-        <h4>Empowering Farmers</h4>
+        <h4>Empowering Farmers</h4> 
       </div>
       <div className="vision-icon-block">
         <img src="/vision3.png" alt="Innovation" />
@@ -227,7 +257,7 @@ const [selectedYear, setSelectedYear] = useState("2018");
   </section>
 </FadeInSection>
 
-</FadeInSection>
+
 {showTimeline && (
       <section className="timeline-section fade-in">
   <h2 className="timeline-heading">Timeline</h2>

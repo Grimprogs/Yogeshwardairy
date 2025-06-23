@@ -20,41 +20,74 @@ body {
   font-family: var(--font-body);
   font-size: 1rem;
   color: #222;
-  background-color: #f8fff8;
   line-height: 1.6;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
 }
-.about-hero {
-  position: relative;
+
+.hero-image-layer {
+  height: 100vh;
   width: 100%;
-  height: 200px;
-  animation: fadeImg 1.5s ease-in-out;
-  overflow: hidden;
-  background: linear-gradient(135deg, #f8fff8 0%, #efffef 50%, #f0fff0 100%);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.about-bg {
-  position: absolute;
-  top: 0;
+  position: fixed; /* sticks behind */
+  top: 10;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   z-index: 0;
-  filter: brightness(65%) saturate(1.1); /* Darker bg for text contrast */
+  display: flex;
+  flex-direction: column; /* vertical stacking */
+  
 }
+.half-hero-img {
+  flex: 1;
+  width: 100%;
+  height: 50%;           /* Ensures 50% of viewport height */
+  object-fit: fill;   /* ✅ Fully visible, no cropping */
+  object-position: center;
+  background-color: transparent; /* optional, fills gaps */
+  z-index: 1;
+}
+
+/* Bottom image */
+
+.about-hero {
+    position: relative;
+  height: 30vh;
+  background-color:transparent; /* transparent feel */
+  z-index: 1;
+}
+
+.about-overlay {
+   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background-color: transparent; /* semi-transparent white box */
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 700px;
+  
+}
+
+.about-overlay h2 {
+  font-size: 3rem;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.about-overlay p {
+  font-size: 1.2rem;
+  color: #444;
+  line-height: 1.6;
+}
+
 
 .about-text {
   position: relative;
   z-index: 1;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(179, 0, 0, 0.15);
   backdrop-filter: blur(10px);
   padding: 30px 40px;
   border-radius: 16px;
@@ -82,6 +115,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 50px 20px;
   background-color: #fdfdfd;
   overflow: hidden;
+  z-index: 1;
+  width:auto;
    
 }
 
@@ -94,13 +129,9 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   background-repeat: repeat;
   background-position: top left;
-  z-index: 0;
-}
-
-.about-section > * {
-  position: relative;
   z-index: 1;
 }
+
 
 .about-grid {
   display: flex;
@@ -271,10 +302,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .why-us-section {
+  width:  100%;
   padding: 60px 20px;
-  background-color: #f9f9f9;
+  background-color:  transparent;
   position: relative;
   overflow: hidden;
+    width: auto;
+   
 }
 
 .why-us-section::after {
@@ -282,12 +316,12 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%;
+  width: 100%;
   height: 100%;
   background-repeat: repeat;
   background-position: top right;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
 
 .why-us-section > * {
@@ -417,12 +451,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Responsive Tweaks */
 @media (max-width: 768px) {
-  .about-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  margin-left:  10px;
-}
+  
 .about-hero {
   position: relative;
   width: 100%;
@@ -517,7 +546,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 10px;
   font-size: 1rem;
   animation: bounce 1.5s infinite;
-  z-index: 2;
+  z-index: 1;
 }
 
 .about-image-large {
@@ -665,12 +694,15 @@ h1, h2, h3, h4, h5, h6 {
   .about-text {
     font-size: 2rem;
   }
+  
 }
   .timeline-section {
-    background-color: #000;
-    color: white;
+    background-color: gradient(to right, #1b5e20, #7c4e40);
+    
+    color: rgb(0, 0, 0);
     padding: 50px 20px;
     text-align: center;
+    width: auto
   }
 
   .timeline-heading {
@@ -682,6 +714,7 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     max-width: 900px;
     margin: 0 auto;
+    width: 100%;
   }
 
   .timeline-line {
@@ -704,14 +737,14 @@ h1, h2, h3, h4, h5, h6 {
   .timeline-dot {
     width: 20px;
     height: 20px;
-    background-color: #888;
+    background-color: #000000;
     border-radius: 50%;
     transition: 0.3s ease;
   }
 
   .timeline-year {
     margin-top: 8px;
-    color: #888;
+    color: #000000;
     font-size: 14px;
     transition: 0.3s ease;
   }
@@ -769,53 +802,73 @@ h1, h2, h3, h4, h5, h6 {
 
   .year-description {
     font-size: 1.1rem;
-    color: #ccc;
+    color: #000000;
     line-height: 1.6;
     padding: 0 10px;
     
   }
 
   /* Optional fade animation */
-.vision-section {
-  padding: 60px 20px;
-  background: #fdfdfd;
-  text-align: center;
+  .vision-section {
+     padding: 40px 20px 80px;
+    background: #fdfdfd;
+    background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      width: auto;
+   
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  
+.vision-heading {
+  font-size: 3rem;
+  font-family: 'Baloo 2', cursive;
+  color: transparent;
+  background: linear-gradient(90deg, #ffffff, #e6ffe6); /* White to soft lime */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   position: relative;
-  z-index: 1;
+  margin-bottom: 40px;
+  cursor: pointer;
+  display: inline-block;
 }
 
-.vision-heading {
-  font-size: 2.5rem;
-  color: #1b5e20;
-  margin-bottom: 20px;
-  font-family: 'Baloo 2', cursive;
-  position: relative;
-}
+
+
 .vision-heading::after {
   content: "";
   width: 60px;
-  height: 3px;
-  background-color: #ff6f00;
+  height: 5px;
+  background: linear-gradient(to right, #ffffff, #b3ffb3); /* White to mint */
   position: absolute;
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
+  transition: width 0.4s ease-in-out;
 }
 
+.vision-heading:hover::after {
+  width: 120px;
+}
 .vision-text {
   max-width: 800px;
-  margin: 0 auto 40px;
-  font-size: 1.15rem;
-  color: #444;
-  font-family: 'Baloo 2', cursive;
-  line-height: 1.7;
+  margin: 0 auto 50px;
+  font-size: 1.2rem;
+  color: #000000; /* light creamy yellow (great contrast) */
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-style: oblique;
+  line-height: 1.8;
 }
 
-.vision-icons {
+ .vision-icons {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 50px; /* Increased spacing between icons */
   flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 .vision-icon-block {
@@ -823,13 +876,13 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 200px;
+  max-width: 220px;
 }
 
 .vision-icon-block img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 10px;
+  width: 80px; /* Increased from 60px */
+  height: 80px;
+  margin-bottom: 15px;
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
   transition: transform 0.3s ease;
 }
@@ -839,9 +892,221 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .vision-icon-block h4 {
-  font-size: 1.1rem;
-  color: #2e7d32;
+  font-size: 1.2rem;
+  color: #e0ffe0; /* pale green (contrasts well with orange) */
   font-weight: 600;
   font-family: 'Baloo 2', cursive;
+}
+
+
+.mission-section {
+  padding: 60px 0px;
+  background-color: #fefefe;
+  text-align: center;
+  position: relative;
+  width : auto;
+}
+
+.mission-heading {
+  position: relative;
+  font-size: 3rem;
+  margin-bottom: 50px;
+  color: #1b5e20;
+  display: inline-block; /* Required for hover effect */
+  cursor: pointer;
+}
+
+.mission-heading::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background-color: #f30000;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.4s ease-in-out;
+}
+
+/* On hover: line expands smoothly */
+.mission-heading:hover::after {
+  width: 120px; /* Or any length you want */
+  
+}
+
+
+.mission-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.mission-card {
+  max-width:600px;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: #fff;
+  padding: 15px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.mission-card:hover {
+  transform: translateY(-5px);
+   
+}
+
+.mission-card img {
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.mission-card:hover img {
+  transform: scale(1.05);
+}
+
+.mission-card h4 {
+  font-size: 1.3rem;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.mission-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Optional: Add a subtle border on hover */
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mission-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  /* HERO IMAGE + OVERLAY */
+  
+.hero-image-layer {
+  height: 100vh;
+  width: 100%;
+  position: fixed; /* sticks behind */
+  top: 10;
+  left: 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: column; /* vertical stacking */
+  
+}
+.half-hero-img {
+  flex: 1;
+  width: 100%;
+  height: 50%;           /* Ensures 50% of viewport height */
+  object-fit: fill;   /* ✅ Fully visible, no cropping */
+  object-position: center;
+  background-color: transparent; /* optional, fills gaps */
+  z-index: 1;
+}
+
+
+  .about-hero {
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .about-overlay {
+    position: relative;
+    transform: none;
+    top: auto;
+    left: auto;
+    padding: 20px 15px;
+    max-width: 90%;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .about-overlay h2 {
+    font-size: 2rem;
+  }
+
+  .about-overlay p {
+    font-size: 1rem;
+  }
+
+  /* ABOUT SECTION */
+  .about-grid {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-text-block h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-text-block p {
+    font-size: 1rem;
+  }
+
+  .feature-box {
+    width: 90%;
+    max-width: 100%;
+  }
+
+  /* MISSION CARDS */
+  .mission-card img {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .mission-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .mission-card p {
+    font-size: 0.95rem;
+  }
+
+  /* TIMELINE */
+  .timeline-content img {
+    width: 80%;
+    height: auto;
+  }
+
+  .year-image {
+    max-width: 90%;
+  }
+
+  .vision-heading {
+    font-size: 2rem;
+  }
+
+  .vision-text {
+    font-size: 1rem;
+  }
+
+  .vision-icon-block img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .vision-icon-block h4 {
+    font-size: 1rem;
+  }
+
+  .why-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .why-feature p {
+    font-size: 0.9rem;
+  }
 }
 
