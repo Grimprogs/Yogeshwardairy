@@ -2,24 +2,45 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background: #ffffff;
-  color: #179c34;
   padding: 32px 16px;
   font-family: 'Roboto', Arial, sans-serif;
   gap: 32px;
-  border-top: 2px solid #ccc; /* fixed small syntax bug here */
+  color: #179c34;
+
+  background-color: #dde7d8; /* soft creamy base */
+  position: relative;
+  border-top: 2px solid #ccc;
   box-shadow: 0 -4px 16px rgba(30, 64, 175, 0.10);
-  
-  position: relative; /* ✅ Required for z-index to work */
+  z-index: 1;
+  overflow: hidden; /* ensure bg stays inside */
+}
+
+/* Pseudo-element for background image with transparency */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('/milk4.png'); /* make sure it's in /public or correct path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.25; /* soft blend */
+  z-index: 0;
+}
+
+/* Ensures content stays above the background */
+.footer * {
+  position: relative;
   z-index: 1;
 }
 
+/* Footer section layout */
 .footer-section {
   flex: 1 1 200px;
   min-width: 180px;
   margin-bottom: 16px;
-  z-index: 1;
 }
+
 
 .footer-section h3, .footer-section h4 {
   margin-bottom: 15px;

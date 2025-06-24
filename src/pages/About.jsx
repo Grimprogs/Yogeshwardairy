@@ -96,6 +96,7 @@ const [selectedYear, setSelectedYear] = useState("2018");
 
    <FadeInSection>
   <section className="about-hero fade-in">
+    <div className="about-hero-image"> </div>
     <div className="about-overlay">
       <h2>About Us</h2>
       <p>We deliver quality dairy products with care and innovation.</p>
@@ -232,6 +233,7 @@ const [selectedYear, setSelectedYear] = useState("2018");
 
 <FadeInSection>
   <section className="vision-section fade-in">
+    <div class="black-overlay"> </div>
     <h2 className="vision-heading">Our Vision</h2>
     <p className="vision-text">
       Inspired by the spirit of Indian families, our vision is simple — to bring *Shuddh aur Swachh Doodh* from our farms to your doorstep.  

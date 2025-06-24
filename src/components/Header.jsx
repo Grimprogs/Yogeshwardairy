@@ -25,14 +25,16 @@ function Header() {
   };
 
   return (
-    <header className="header">
-      <div className="logo-group">
-        <img src="/Logo.png" alt="Logo" className="logo-img" />
-        <div>
-          <span className="brand-title">Yogeshwar Dairy</span>
-          <div className="logo-subtitle">Natural | Pure | Fresh</div>
-        </div>
-      </div>
+  <header className="header">
+  <div className="logo-group">
+    <Link to="/">
+      <img src="/Logo.png" alt="Logo" className="logo-img" />
+    </Link>
+    <div>
+      <Link to="/" className="brand-title">Yogeshwar Dairy</Link>
+      <div className="logo-subtitle">Natural | Pure | Fresh</div>
+    </div>
+  </div>
 
       {/* Hamburger for mobile */}
       <button
