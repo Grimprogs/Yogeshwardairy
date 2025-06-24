@@ -1,8 +1,10 @@
 .testimonial-section {
   padding: 60px 20px;
+  position: relative;
   background: #f7fdf7;
   text-align: center;
   font-family: 'Roboto', sans-serif;
+    z-index: 3;
 }
 
 .testimonial-heading {
@@ -10,6 +12,7 @@
   color: #29a830;
   margin-bottom: 40px;
   font-weight: 700;
+    z-index: 3;
 }
 
 .testimonial-cards {
@@ -119,5 +122,5 @@
 .center-card {
   transform: scale(1.1);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  z-index: 2;
+  z-index: 3;
 }

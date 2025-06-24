@@ -3,6 +3,7 @@
 .premium-hero-wrapper {
   position: relative;
   overflow: hidden;
+    z-index: 3;
 
   /* Gradient fallback */
   background: linear-gradient(135deg, #f8fff8 0%, #efffef 50%, #f0fff0 100%);
@@ -12,6 +13,16 @@
   background-repeat: no-repeat;
   background-size: cover;     /* Stretches the image */
   background-position: center; /* Centers the image */
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Set to 100% to cover the parent */
+  height: 100%; /* Set to 100% to cover the parent */
+  background-color: rgb(0, 0, 0); /* Or rgba(0, 0, 0, 0.5); if preferred for opacity */
+  opacity: 0.1; /* Adjust as needed */
+  z-index: -1; /* Places it behind static content in the same stacking context */
 }
 
 
@@ -70,7 +81,9 @@
   font-size: 0.95rem;
   border-radius: 50px;
   padding: 10px 20px;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
+  margin: auto;
+   margin-bottom: 40px;
   box-shadow: 
     0 8px 32px rgba(200, 180, 0, 0.15),
     inset 0 1px 2px rgba(255, 255, 255, 0.8);
@@ -78,11 +91,13 @@
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(200, 180, 0, 0.2);
+
 }
 
 .badge-icon {
   font-size: 1.1rem;
   animation: pulse 2s ease-in-out infinite;
+
 }
 
 .badge-shine {
@@ -121,16 +136,7 @@
   display: inline-block;
 }
 
-.word-highlight {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 8px;
-  background: linear-gradient(90deg, #18b43a, #f7b500);
-  border-radius: 4px;
-  animation: expand 2s ease-out 1s both;
-}
+
 
 @keyframes expand {
   from { width: 0; }
@@ -260,12 +266,13 @@
   font-weight: 800;
   color: #18b43a;
   margin-bottom: 4px;
+  z-index: 2;
   animation: countUp 2s ease-out 2s both;
 }
 
 .stat-label {
   font-size: 0.9rem;
-  color: #777;
+  color: #c4b5b5;
   font-weight: 500;
 }
 
@@ -476,6 +483,7 @@
 
 /* Responsive Design */
 @media (max-width: 1200px) {
+  
   .premium-hero {
     flex-direction: column;
     align-items: center;
@@ -578,5 +586,13 @@
 
   .stat-number {
     font-size: 1.6rem;
+  }
+  
+  
+  .hero-description {
+    font-size: 1.1  rem;
+    z-index: 2;
+    color: #ffffff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
 }

@@ -90,6 +90,7 @@ const [selectedYear, setSelectedYear] = useState("2018");
   return (
      <>
  <section className="hero-image-layer">
+  
   <img src="/About4.png" className="half-hero-img" alt="Top Image" />
 </section>
 
@@ -152,6 +153,7 @@ const [selectedYear, setSelectedYear] = useState("2018");
       </FadeInSection>
       <FadeInSection>
     <section className="why-us-section fade-in">
+      <div class="why-us-background ai-style-change-1"></div>
       <div className="why-badge">Trusted by Families Since 1986</div>
 
       <div className="why-us-content">
@@ -260,6 +262,8 @@ const [selectedYear, setSelectedYear] = useState("2018");
 
 {showTimeline && (
       <section className="timeline-section fade-in">
+            <div className="timeline-overlay"></div>
+
   <h2 className="timeline-heading">Timeline</h2>
 
   <div className="timeline-container">

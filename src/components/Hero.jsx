@@ -56,6 +56,7 @@ const Hero = () => {
 
       {/* Hero Section */}
       <section className="premium-hero">
+        <div class="hero-overlay"></div>
         <div className="hero-content">
           <div className={`hero-badge ${isVisible ? 'fade-in-up' : ''}`}>
             <div className="badge-icon">🏆</div>

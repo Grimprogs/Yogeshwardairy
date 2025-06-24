@@ -12,7 +12,7 @@
   
 }
 :root {
-    background: linear-gradient(135deg, #f8fff8 0%, #efffef 50%, #f0fff0 100%);
+    
  --font-heading: 'Poppins', sans-serif;
   --font-body: 'Open Sans', sans-serif;
 }
@@ -26,17 +26,54 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
 }
-
+body {
+  margin: 0;
+}
 .hero-image-layer {
-  height: 100vh;
-  width: 100%;
-  position: fixed; /* sticks behind */
-  top: 10;
-  left: 0;
-  z-index: 0;
+   position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1; /* This is crucial for placing it behind other content */
+      /* You might also need to ensure width/height are 100% if top/left/right/bottom 0 isn't sufficient due to other styles */
+      width: 100%;
+      height: 100%;
   display: flex;
   flex-direction: column; /* vertical stacking */
   
+}
+
+.timeline-overlay {
+    position: absolute; /* Change from fixed to absolute */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Keep your desired color and opacity */
+    z-index: -1; /* IMPORTANT: Set a negative z-index so it is behind the timeline content */
+}
+
+/* Add or ensure your timeline section has a relative or absolute position */
+.timeline-section {
+    position: relative; /* This makes the timeline-section the containing block for the absolute overlay */
+    /* Keep your existing styles for timeline-section (padding, margins, etc.) */
+}
+/* Apply to the parent element */
+section.about-hero.fade-in {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically */
+  padding: 0;              /* Removed padding that affected centering */
+}
+
+/* Apply to the .about-overlay element */
+.about-overlay {
+  position: static; /* Ensures element respects Flexbox layout */
+  margin: 0;        /* Removes margin that might cause offset */
+  padding: 0;       /* Removed padding that affected centering */
+  /* You may still want to add internal padding for the content within .about-overlay */
+  /* For example: padding: 20px; */
 }
 .half-hero-img {
   flex: 1;
@@ -44,8 +81,8 @@ h1, h2, h3, h4, h5, h6 {
   height: 50%;           /* Ensures 50% of viewport height */
   object-fit: fill;   /* ✅ Fully visible, no cropping */
   object-position: center;
-  background-color: transparent; /* optional, fills gaps */
-  z-index: 1;
+   /* optional, fills gaps */
+  z-index: 2;
 }
 
 /* Bottom image */
@@ -286,12 +323,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .why-badge {
-  display: inline-block;
+  display: inline-block; /* ✅ Keep it inline so it only takes as much space as needed */
   padding: 10px 20px;
   margin-bottom: 20px;
   font-size: 1rem;
   font-weight: bold;
-  margin-left: 300px;
   color: #b26a00;
   border: 2px solid #ffc107;
   background-color: #fff9e6;
@@ -299,6 +335,28 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   letter-spacing: 1px;
   animation: bounce 1.5s infinite;
+  position: relative;
+  z-index: 2;
+
+  /* ✅ Center it horizontally */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.why-us-background.ai-style-change-1 {
+  position: absolute;
+  top: -10px; /* Or the values set in the previous step */
+  left: -10px; /* Or the values set in the previous step */
+  right: -10px; /* Or the values set in the previous step */
+  bottom: -10px; /* Or the values set in the previous step */
+  width: auto;   /* Or '100%' if you revert the size adjustment */
+  height: auto;  /* Or '100%' if you revert the size adjustment */
+  background-color: rgba(0, 0, 0, 0.7); /* Or the color you prefer */
+  z-index: -1;
+  backdrop-filter: blur(10px); /* Optional: adds a blur effect */
+  border-radius: 15px; /* Or the value you prefer */
+  opacity: 0.4; /* Optional: adjust the opacity */
 }
 
 .why-us-section {
@@ -340,9 +398,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .why-text h2 {
-  font-size: 2.2rem;
-  color: #1b5e20;
-  margin-bottom: 10px;
+  font-size: 3rem;
+  font-family: 'Baloo 2', cursive;
+  color: #09ff09;
+  margin :auto;
 
   position: relative;
   display: inline-block;
@@ -357,7 +416,7 @@ h1, h2, h3, h4, h5, h6 {
   bottom: -5px;
   width: 0%;
   height: 2px;
-  background-color: #1b5e20;
+  background-color: #ff0000c4;
   transition: width 0.4s ease;
 }
 
@@ -367,14 +426,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hover effects */
 .why-text h2:hover {
-  color: #2e7d32;
+  color: #ff0000;
   transform: translateY(-5px); /* subtle bounce-up effect */
   cursor: pointer;
 }
 
 .why-text .subtitle {
-  font-size: 1rem;
-  color: #555;
+  font-size: 1.6rem;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
   margin-bottom: 20px;
   max-width: 500px;
 }
@@ -398,13 +458,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .why-feature h4 {
   font-size: 1.1rem;
-  color: #2e7d32;
+  color: #3dff46;
   margin: 0 0 5px;
 }
 
 .why-feature p {
   font-size: 0.95rem;
-  color: #555;
+  color: #ffffff;
   margin: 0;
 }
 
@@ -538,7 +598,7 @@ h1, h2, h3, h4, h5, h6 {
 .years-badge {
   position: absolute;
   background-color: #1ad313;
-  color: white;
+  color: rgb(255, 255, 255);
   font-weight: bold;
   padding: 20px 14px;
   border-radius: 6px;
@@ -606,14 +666,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .image-caption h4 {
-  color: #2e7d32;
-  font-size: 1.2rem;
+  font-size: 1.9rem;
   margin-bottom: 5px;
+  background: linear-gradient(90deg, #00ff0d, #00ffcc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; /* Fallback */
 }
 
 .image-caption p {
-  color: #555;
-  font-size: 0.95rem;
+  font-size: 1.6rem;
+  background: linear-gradient(90deg, #ffffff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; /* Fallback */
 }
 
 /* Base Styles (Mobile First) */
@@ -699,15 +767,18 @@ h1, h2, h3, h4, h5, h6 {
   .timeline-section {
     background-color: gradient(to right, #1b5e20, #7c4e40);
     
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     padding: 50px 20px;
     text-align: center;
-    width: auto
+    width: auto;
+    
+
   }
 
   .timeline-heading {
     font-size: 2.5rem;
     margin-bottom: 40px;
+    font-weight: 200;
   }
 
   .timeline-container {
@@ -732,19 +803,22 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     align-items: center;
     cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
   }
 
   .timeline-dot {
     width: 20px;
     height: 20px;
-    background-color: #000000;
+    background-color: #ffffff;
     border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     transition: 0.3s ease;
   }
 
   .timeline-year {
     margin-top: 8px;
-    color: #000000;
+    color: #ffffff;
     font-size: 14px;
     transition: 0.3s ease;
   }
@@ -776,6 +850,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: center;
   animation: fadeIn 0.8s ease-in-out both;
+  color: #ffffff;
 }
 
   .timeline-content img {
@@ -802,9 +877,10 @@ h1, h2, h3, h4, h5, h6 {
 
   .year-description {
     font-size: 1.1rem;
-    color: #000000;
+    color: #ffffff;
     line-height: 1.6;
     padding: 0 10px;
+    font-family:'Baloo 2', cursive ;
     
   }
 
@@ -998,12 +1074,13 @@ h1, h2, h3, h4, h5, h6 {
   
 .hero-image-layer {
   height: 100vh;
-  width: 100%;
+  width: auto;
   position: fixed; /* sticks behind */
   top: 10;
   left: 0;
   z-index: 0;
   display: flex;
+  
   flex-direction: column; /* vertical stacking */
   
 }
@@ -1030,7 +1107,8 @@ h1, h2, h3, h4, h5, h6 {
     left: auto;
     padding: 20px 15px;
     max-width: 90%;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
   }
 
   .about-overlay h2 {
