@@ -19,9 +19,9 @@
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background-image: url("./milk3.png");
-  background-size: repeat;
+  background-size: auto; /* adjust to your liking */
   background-position: center;
-  background-repeat: auto;
+  background-repeat: repeat;
   opacity: 0.85; /* adjust to your liking */
   z-index: -1;
 }
