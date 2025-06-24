@@ -21,7 +21,7 @@
   background-image: url("./milk3.png");
   background-size: repeat;
   background-position: center;
-  background-repeat: repeat;
+  background-repeat: auto;
   opacity: 0.85; /* adjust to your liking */
   z-index: -1;
 }
