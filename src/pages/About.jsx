@@ -91,7 +91,7 @@ const [selectedYear, setSelectedYear] = useState("2018");
      <>
  <section className="hero-image-layer">
   
-  <img src="/About4.png" className="half-hero-img" alt="Top Image" />
+  <img src="/aboutstatic.png" className="half-hero-img" alt="Top Image" />
 </section>
 
    <FadeInSection>
