@@ -7,7 +7,7 @@
   gap: 32px;
   color: #179c34;
 
-  background-color: #dde7d8; /* soft creamy base */
+  background-color: #e7d8db; /* soft creamy base */
   position: relative;
   border-top: 2px solid #ccc;
   box-shadow: 0 -4px 16px rgba(30, 64, 175, 0.10);
@@ -20,7 +20,7 @@
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url('/milk4.png'); /* make sure it's in /public or correct path */
+  background-image: url('/milk.png'); /* make sure it's in /public or correct path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
